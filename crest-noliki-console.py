@@ -110,7 +110,6 @@ def computerMove(board):
     for row_count, row in enumerate(board):
         for col_count, column in enumerate(row):
             if column == None:  # Если клетка свободна
-                # Проверяем оба варианта: может ли X или O выиграть
                 for piece in ['x', 'o']:
                     board[row_count][col_count] = piece  # Временная установка фигуры
                     if check_win(board) == 'Победа':
@@ -126,7 +125,6 @@ def computerMove(board):
     return random_move
 
 
-# Основная игровая логика
 game = Game()
 
 while True:
@@ -145,7 +143,7 @@ while True:
                 print('Ничья')
             print('-' * 20)
 
-            # Предложение сыграть again
+            # Предложение сыграть снова
             restart = input('Сыграть заново? [д/н]? ')
             cprint('GG', 'green', 'on_blue')
             if restart.lower() == 'н':
